@@ -1,6 +1,6 @@
 let randomWordUrl = "https://random-word-api.herokuapp.com/word?number=1";
 let gifhyAPI =
-  "http://api.giphy.com/v1/gifs/search?api_key=N4V9iJb4LhIcnNN6tdTR1DAONhuN9eDV";
+  "https://api.giphy.com/v1/gifs/search?api_key=N4V9iJb4LhIcnNN6tdTR1DAONhuN9eDV";
 
 async function getData() {
   let res = await fetch(randomWordUrl);
