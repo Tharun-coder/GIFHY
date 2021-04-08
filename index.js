@@ -10,18 +10,17 @@ async function getData() {
   let dataGifhy = await resGifhy.json();
   console.log(dataGifhy.data[0]);
   let object = document.createElement("object");
-  object.data = dataGifhy.data[0].images.fixed_height.url
-    ? dataGifhy.data[0].images.fixed_height.url
-    : null;
+  object.data = dataGifhy.data ? dataGifhy.data[0].images.original.url : null;
   if (object.data === null) {
     // object.innerHTML = `<p>No data Found for the search word ${data[0]}<p>`;
     let h2 = document.createElement("h2");
     h2.innerText = `No data Found for the search word ${data[0]}`;
     document.body.append(h2);
+  } else {
+    object.height = "700px";
+    object.width = "100%";
+    document.body.append(object);
   }
-  object.height = "700px";
-  object.width = "100%";
-  document.body.append(object);
 }
 
 getData();
